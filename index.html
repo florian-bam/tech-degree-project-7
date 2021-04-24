@@ -4,6 +4,7 @@
         <title>My 7th Tech Degree Project</title>
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/toggle-switch.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body class="grid-container">
@@ -181,11 +182,28 @@
             </section>
             <section class="settings" id="settings">
                 <h3>Settings</h3>
+                <!-- custom CSS toggle code -->
+                <p>Send Email Notifications</p>
+                <label class="switch-light switch-ios" onclick="">
+                    <input store="checkbox1" type="checkbox">
+                    <span class="switch">
+                        <span>OFF</span>
+                        <span>ON</span>
+                        <a></a>
+                    </span>
+                    
+                </label>
 
                 <!-- custom CSS toggle code -->
-
-                <!-- custom CSS toggle code -->
-
+                <p>Set Profile to Public</p>
+                <label class="switch-light switch-ios" onclick="">
+                    <input store="checkbox1" type="checkbox">
+                    <span class="switch">
+                    <span>OFF</span>
+                    <span>ON</span>
+                    <a></a>
+                    </span>
+                </label>
                 <select class="form-field" id="timezone">
                     <option disabled selected>Select a Timezone</option>
                     <option>EST</option>
