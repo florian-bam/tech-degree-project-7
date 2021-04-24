@@ -1,0 +1,27 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    // padding: 10px auto;
+    background-color: $color-secondary;
+    align-items: center;
+    @media screen and (min-width: 768px) {
+        flex-direction: column;
+    }
+}
+a svg {
+    width: 30px;
+    fill: $white;
+    padding: 10px 20px;
+}
+a[href="#top"]:first-child {
+    margin-left: auto;
+    @media screen and (min-width: 768px) {
+        margin-left: 0;
+    }
+}
+a[href="#settings"]:last-child {
+    margin-right: auto;
+    @media screen and (min-width: 768px) {
+        margin-right: 0;
+    }
+}

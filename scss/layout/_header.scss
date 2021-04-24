@@ -1,0 +1,34 @@
+header {
+    display: flex;
+    flex-direction: row;
+    margin: 0.67em 0;
+    background-color: $color-primary;
+    color: $white;
+    fill: $white;
+    padding: 10px 5px;
+    margin: auto 0;
+    align-items: center;
+    @media screen and (min-width: 768px) {
+        padding: 10px 10px;
+    }
+}
+h1 {
+    font-size: 15px;
+    margin-right: auto;
+}
+header>div {
+    width: 25px;
+    padding-right: 10px;
+    border-right: white .5px solid;
+}
+header img {
+    width: 40px;
+    padding: 0 10px;
+    @media screen and (min-width: 768px) {
+        padding: 0 20px;
+    }
+}
+header h3 {
+    width: auto;
+    font-size: small;
+}

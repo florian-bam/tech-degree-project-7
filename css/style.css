@@ -355,6 +355,49 @@ template {
   }
 }
 
+header {
+  display: flex;
+  flex-direction: row;
+  margin: 0.67em 0;
+  background-color: #7477bf;
+  color: #fff;
+  fill: #fff;
+  padding: 10px 5px;
+  margin: auto 0;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  header {
+    padding: 10px 10px;
+  }
+}
+
+h1 {
+  font-size: 15px;
+  margin-right: auto;
+}
+
+header > div {
+  width: 25px;
+  padding-right: 10px;
+  border-right: white 0.5px solid;
+}
+
+header img {
+  width: 40px;
+  padding: 0 10px;
+}
+@media screen and (min-width: 768px) {
+  header img {
+    padding: 0 20px;
+  }
+}
+
+header h3 {
+  width: auto;
+  font-size: small;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 100%;
@@ -407,6 +450,46 @@ main {
 .settings {
     grid-column: 2/span 1;
   }
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  background-color: #4d4c72;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+}
+
+a svg {
+  width: 30px;
+  fill: #fff;
+  padding: 10px 20px;
+}
+
+a[href="#top"]:first-child {
+  margin-left: auto;
+}
+@media screen and (min-width: 768px) {
+  a[href="#top"]:first-child {
+    margin-left: 0;
+  }
+}
+
+a[href="#settings"]:last-child {
+  margin-right: auto;
+}
+@media screen and (min-width: 768px) {
+  a[href="#settings"]:last-child {
+    margin-right: 0;
+  }
+}
+
+img[src^="images/"] {
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */
