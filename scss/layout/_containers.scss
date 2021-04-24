@@ -1,0 +1,12 @@
+.widget-container-full {
+    width: 95vw;
+    @media screen and (min-width: 768px) {
+        width: 90vw;
+    }
+}
+.widget-container-half {
+    width: 95vw;
+    @media screen and (min-width: 768px) {
+        width: 45vw;
+    }
+}
