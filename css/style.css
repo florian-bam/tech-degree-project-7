@@ -355,6 +355,30 @@ template {
   }
 }
 
+.main-header {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+}
+
+.main-header h2 {
+  font-size: 1em;
+  padding: 10px;
+  margin: auto 0;
+}
+
+.main-header-search input {
+  height: 38px;
+  border: none;
+  border-left: gray 0.5px solid;
+  border-bottom: gray 0.5px solid;
+  background-color: lightgrey;
+}
+
+.alert {
+  display: flex;
+  flex-direction: row;
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -421,6 +445,7 @@ nav {
 
 main {
   grid-area: main;
+  width: 95vw;
   display: grid;
 }
 @media screen and (min-width: 768px) {
@@ -486,6 +511,15 @@ a[href="#settings"]:last-child {
   a[href="#settings"]:last-child {
     margin-right: 0;
   }
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+}
+
+li {
+  list-style: none;
 }
 
 img[src^="images/"] {

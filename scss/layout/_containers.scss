@@ -1,3 +1,4 @@
+// General Container Layout
 .widget-container-full {
     width: 95vw;
     @media screen and (min-width: 768px) {
@@ -9,4 +10,31 @@
     @media screen and (min-width: 768px) {
         width: 45vw;
     }
+}
+
+// Dashboard
+.main-header {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+}
+.main-header h2 {
+    font-size: 1em;
+    padding: 10px;
+    margin: auto 0;
+}
+.main-header-search{
+    // margin-left: auto;
+    & input {
+        height: 38px;
+        border: none;
+        border-left: gray .5px solid;
+        border-bottom: gray .5px solid;
+        background-color: lightgrey;
+    }
+}
+
+// Alert Notification
+.alert {
+    display: flex;
+    flex-direction: row;
 }

@@ -1,3 +1,4 @@
+// SVG Nav Bar
 nav {
     display: flex;
     flex-direction: row;
@@ -24,4 +25,13 @@ a[href="#settings"]:last-child {
     @media screen and (min-width: 768px) {
         margin-right: 0;
     }
+}
+
+// Traffic Time-Frame Selection
+ul {
+    display: flex;
+    flex-direction: row;
+}
+li {
+    list-style: none;
 }
