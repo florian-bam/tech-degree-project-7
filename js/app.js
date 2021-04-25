@@ -457,57 +457,43 @@ trafficNav.addEventListener('click', e => {
     }
 });
 
-// const trafficCanvas = document.querySelector('#traffic-chart');
-// let trafficData = {
-//     labels: [
-//         "16-22",
-//         "23-29",
-//         "30-5",
-//         "6-12",
-//         "13-19",
-//         "20-26",
-//         "27-3",
-//         "4-10",
-//         "11-17",
-//         "18-24",
-//         "25-31"
-//     ],
-//     datasets: [{
-//         data: [
-//             750,
-//             1250,
-//             1000,
-//             2000,
-//             1500,
-//             1750,
-//             1250,
-//             1850,
-//             2250,
-//             1500,
-//             2500
-//         ],
-//         backgroundColor: 'rgba(116, 119, 191, .3)',
-//         borderWidth: 1
-//     }]
-// };
-// let trafficOptions = {
-//     aspectRatio: 2.5,
-//     animation: {
-//         duration: 0
-//     },
-//     scales: {
-//         y: {
-//             beginAtZero: true
-//         }
-//     },
-//     plugins: {
-//         legend: {
-//             display: false
-//         }
-//     }
-// };
-// let trafficChart = new Chart(trafficCanvas, {
-//     type: 'line',
-//     data: trafficData,
-//     options: trafficOptions
-// });
+// ======================================
+// The Autocomplete Functionality from:
+// https://dev.to/michaelburrows/create-an-autocomplete-textbox-using-vanilla-javascript-37n0
+// ======================================
+
+const data = [
+    "Victoria Cambers",
+    "Dale Byrd",
+    "Dawn Wood",
+    "Dan Oliver"
+];
+const autocomplete = document.getElementById("userField");
+const resultsHTML = document.getElementById("results");
+
+autocomplete.oninput = function () {
+    let results = [];
+    const userInput = this.value;
+    resultsHTML.innerHTML = "";
+    if (userInput.length > 0) {
+      results = getResults(userInput);
+      resultsHTML.style.display = "block";
+      for (i = 0; i < results.length; i++) {
+        resultsHTML.innerHTML += "<li>" + results[i] + "</li>";
+      }
+    }
+  };
+  function getResults(input) {
+    const results = [];
+    for (i = 0; i < data.length; i++) {
+      if (input === data[i].slice(0, input.length)) {
+        results.push(data[i]);
+      }
+    }
+    return results;
+  }
+  resultsHTML.onclick = function (event) {
+    const setValue = event.target.innerText;
+    autocomplete.value = setValue;
+    this.innerHTML = "";
+  };
