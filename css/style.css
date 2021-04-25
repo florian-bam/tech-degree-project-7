@@ -368,6 +368,12 @@ template {
   font-size: 1em;
   padding: 10px;
   margin: auto 0;
+  width: 95%;
+}
+@media screen and (min-width: 768px) {
+  .main-header h2 {
+    width: 95%;
+  }
 }
 
 .main-header-search input {
@@ -376,6 +382,7 @@ template {
   border-left: gray 0.5px solid;
   border-bottom: gray 0.5px solid;
   background-color: lightgrey;
+  width: 100%;
 }
 
 .alert-banner {
@@ -430,6 +437,122 @@ template {
   .traffic-header ul {
     margin-left: auto;
   }
+}
+
+section {
+  padding-bottom: 30px;
+  border-bottom: lightgrey 0.5px solid;
+}
+
+.social-container {
+  display: flex;
+  flex-direction: row;
+  background-color: lightgrey;
+  border: gray 0.5px solid;
+  border-radius: 10px;
+  margin: 0 20px 20px 20px;
+}
+
+.social-image {
+  background-color: #7477bf;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 20px;
+}
+.social-image svg {
+  fill: #fff;
+  width: 30px;
+  height: 30px;
+}
+
+.social-text p:last-child {
+  font-size: 30px;
+}
+
+.social-text p:first-child {
+  margin-top: 15px;
+  color: #7477bf;
+  font-weight: 700;
+}
+
+.social-text p {
+  margin: 0;
+}
+
+.members-container {
+  border-bottom: gray 0.5px solid;
+  margin-bottom: 20px;
+}
+
+.members-container,
+.activity-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.activity-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: gray 0.5px solid;
+  margin-bottom: 20px;
+}
+
+.activity-text p,
+.member-text p,
+.member-text a {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+}
+form button {
+  color: #fff;
+  background-color: #7477bf;
+  margin: 15px;
+  border-radius: 5px;
+  height: 30px;
+}
+form input {
+  margin: 15px;
+  border-radius: 5px;
+  height: 30px;
+}
+form textarea {
+  margin: 15px;
+  border-radius: 5px;
+  height: 100px;
+}
+
+.settings-container {
+  display: flex;
+}
+.settings-container label {
+  width: 80px;
+  margin-left: auto;
+}
+
+.settings select {
+  width: 95vw;
+  height: 30px;
+}
+
+.settings-button button {
+  width: 45vw;
+  height: 30px;
+}
+.settings-button button:first-child {
+  background-color: #7477bf;
+  color: #fff;
+}
+.settings-button button:last-child {
+  background-color: grey;
+  color: #fff;
 }
 
 header {

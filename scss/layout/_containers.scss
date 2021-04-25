@@ -21,6 +21,10 @@
     font-size: 1em;
     padding: 10px;
     margin: auto 0;
+    width: 95%;
+    @media screen and (min-width: 768px) {
+        width: 95%;
+    }
 }
 .main-header-search{
     // margin-left: auto;
@@ -30,6 +34,7 @@
         border-left: gray .5px solid;
         border-bottom: gray .5px solid;
         background-color: lightgrey;
+        width: 100%;
     }
 }
 
@@ -86,4 +91,116 @@
             margin-left: auto;
         }
     }    
+}
+
+// Graph container styles
+section {
+    padding-bottom: 30px;
+    border-bottom: lightgrey .5px solid;
+}
+
+// Social Stats
+.social-container {
+    display: flex;
+    flex-direction: row;
+    background-color: lightgrey;
+    border: gray .5px solid;
+    border-radius: 10px;
+    margin: 0 20px 20px 20px;
+}
+.social-image {
+    background-color: $color-primary;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+    & svg {
+        fill: $white;
+        width: 30px;
+        height: 30px;
+    }
+}
+.social-text p:last-child{
+    font-size: 30px;
+}
+.social-text p:first-child{
+    margin-top: 15px;
+    color: $color-primary;
+    font-weight: 700;
+}
+.social-text p{
+    margin: 0;
+}
+
+// Members
+.members-container{
+    border-bottom: gray .5px solid;
+    margin-bottom: 20px;
+}
+.members-container,
+.activity-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.activity-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: gray .5px solid;
+    margin-bottom: 20px;
+}
+.activity-text p,
+.member-text p,
+.member-text a {
+    text-align: center;
+}
+
+// Message User
+form {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    & button {
+        color: $white;
+        background-color: $color-primary;
+        margin: 15px;
+        border-radius: 5px;
+        height: 30px;
+    }
+    & input {
+        margin: 15px;
+        border-radius: 5px;
+        height: 30px;
+    }
+    & textarea {
+        margin: 15px;
+        border-radius: 5px;
+        height: 100px;
+    }
+}
+
+// Settings
+.settings-container {
+    display: flex;
+    & label {
+        width: 80px;
+        margin-left: auto;
+    }
+}
+.settings select {
+    width: 95vw;
+    height: 30px;
+}
+.settings-button button {
+    width: 45vw;
+    height: 30px;
+    &:first-child {
+        background-color: $color-primary;
+        color: $white;
+    }
+    &:last-child {
+        background-color: grey;
+        color: $white;
+    }
 }

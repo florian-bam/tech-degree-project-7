@@ -493,7 +493,14 @@ autocomplete.oninput = function () {
     return results;
   }
   resultsHTML.onclick = function (event) {
-    const setValue = event.target.innerText;
-    autocomplete.value = setValue;
-    this.innerHTML = "";
-  };
+  const setValue = event.target.innerText;
+  autocomplete.value = setValue;
+  this.innerHTML = "";
+};
+
+
+
+// ======================================
+// The Local Storage functionality
+// ======================================
+

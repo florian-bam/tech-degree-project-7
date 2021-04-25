@@ -79,22 +79,23 @@
                 </div>
             </section>
             <section class="mobile">
-                <h3>Daily Traffic</h3>
+                <h3>Mobile Users</h3>
                 <div class="widget-container-half">
                     <canvas id="mobile-chart"></canvas>
                 </div>
             </section>
             <section class="social">
+                <h3>Social Stats</h3>
                 <div class="social-container" id="social-members">
-                <div class="social-image">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M23.998 12c0-6.628-5.372-12-11.999-12C5.372 0 0 5.372 0 12c0 5.988 4.388 10.952 10.124 11.852v-8.384H7.078v-3.469h3.046V9.356c0-3.008 1.792-4.669 4.532-4.669 1.313 0 2.686.234 2.686.234v2.953H15.83c-1.49 0-1.955.925-1.955 1.874V12h3.328l-.532 3.469h-2.796v8.384c5.736-.9 10.124-5.864 10.124-11.853z"/>
-                    </svg>
-                </div>
-                <div class="social-text">
-                    <p>Facebook</p>
-                    <p>10,320</p>
-                </div>
+                    <div class="social-image">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23.998 12c0-6.628-5.372-12-11.999-12C5.372 0 0 5.372 0 12c0 5.988 4.388 10.952 10.124 11.852v-8.384H7.078v-3.469h3.046V9.356c0-3.008 1.792-4.669 4.532-4.669 1.313 0 2.686.234 2.686.234v2.953H15.83c-1.49 0-1.955.925-1.955 1.874V12h3.328l-.532 3.469h-2.796v8.384c5.736-.9 10.124-5.864 10.124-11.853z"/>
+                        </svg>
+                    </div>
+                    <div class="social-text">
+                        <p>Facebook</p>
+                        <p>10,320</p>
+                    </div>
                 </div>
                 <div class="social-container">
                     <div class="social-image">
@@ -193,28 +194,31 @@
             </section>
             <section class="settings" id="settings">
                 <h3>Settings</h3>
+
                 <!-- custom CSS toggle code -->
-                <p>Send Email Notifications</p>
-                <label class="switch-light switch-ios" onclick="">
-                    <input store="checkbox1" type="checkbox">
-                    <span class="switch">
+                <div class="settings-container">
+                    <p>Send Email Notifications</p>
+                    <label class="switch-light switch-ios" onclick="">
+                        <input store="checkbox1" type="checkbox">
+                        <span class="switch">
+                            <span>OFF</span>
+                            <span>ON</span>
+                            <a></a>
+                        </span>
+                    </label>
+                </div>
+                <div class="settings-container">
+                    <p>Set Profile to Public</p>
+                    <label class="switch-light switch-ios" onclick="">
+                        <input store="checkbox1" type="checkbox">
+                        <span class="switch">
                         <span>OFF</span>
                         <span>ON</span>
                         <a></a>
-                    </span>
-                    
-                </label>
+                        </span>
+                    </label>
+                </div>
 
-                <!-- custom CSS toggle code -->
-                <p>Set Profile to Public</p>
-                <label class="switch-light switch-ios" onclick="">
-                    <input store="checkbox1" type="checkbox">
-                    <span class="switch">
-                    <span>OFF</span>
-                    <span>ON</span>
-                    <a></a>
-                    </span>
-                </label>
                 <select class="form-field" id="timezone">
                     <option disabled selected>Select a Timezone</option>
                     <option>EST</option>
