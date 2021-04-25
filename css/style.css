@@ -337,6 +337,10 @@ template {
   display: none;
 }
 
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .widget-container-full {
   width: 95vw;
 }
@@ -374,9 +378,50 @@ template {
   background-color: lightgrey;
 }
 
-.alert {
+.alert-banner {
   display: flex;
   flex-direction: row;
+  padding: 3px 7px;
+  background-color: #7477bf;
+  color: #fff;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 13px;
+}
+
+.alert-banner-close {
+  display: inline-block;
+  margin-left: auto;
+}
+
+.notifications-banner {
+  display: flex;
+  flex-direction: row;
+  background-color: #7477bf;
+  color: #000;
+  margin: 10px;
+  font-size: 13px;
+  text-align: center;
+  z-index: 2;
+  background-color: lightgrey;
+  width: 125px;
+  margin: 0;
+}
+
+#notifications {
+  z-index: 2;
+  background-color: lightgrey;
+}
+
+.notifications-banner-close {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 0 10px;
+}
+
+.notifications-banner p {
+  z-index: 2;
+  background-color: lightgrey;
 }
 
 header {

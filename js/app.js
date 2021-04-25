@@ -1,7 +1,7 @@
 // =======================
 // The Alert box
 // =======================
-const alertBanner = document.querySelector('#alert');
+let alertBanner = document.querySelector('#alert');
 
 alertBanner.innerHTML = `
     <div class="alert-banner">
@@ -12,7 +12,7 @@ alertBanner.innerHTML = `
 alertBanner.addEventListener('click', e => {
     const element = e.target;
     if (element.classList.contains("alert-banner-close")) {
-        alert.style.display = "none";
+        alertBanner.style.display = "none";
     }
 });
 
@@ -179,5 +179,28 @@ send.addEventListener('click', () => {
         alert("Please fill out message field before sending");
     } else {
         alert(`Message sent successfully to ${user.value}`);
+    }
+});
+
+// =======================
+// The Bell Messages
+// =======================
+let notificationsBell = document.querySelector('#notifications');
+let bellContainer = document.querySelector('#bell-container');
+
+bellContainer.addEventListener('click', e => {
+    const element = e.target;
+    notificationsBell.innerHTML = `
+    <div class="notifications-banner">
+        <p>Please set your timezone</p>
+        <p class="notifications-banner-close">x</p>
+    </div>
+    <div class="notifications-banner">
+        <p>Please turn on Email Notifications</p>
+        <p class="notifications-banner-close">x</p>
+    </div>
+    `;
+    if (element.classList.contains("notifications-banner-close")) {
+        notificationsBell.style.display = "none";
     }
 });
