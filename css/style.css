@@ -397,15 +397,15 @@ template {
 .notifications-banner {
   display: flex;
   flex-direction: row;
-  background-color: #7477bf;
   color: #000;
-  margin: 10px;
   font-size: 13px;
   text-align: center;
   z-index: 2;
   background-color: lightgrey;
   width: 125px;
   margin: 0;
+  position: absolute;
+  height: 150px;
 }
 
 #notifications {
@@ -422,6 +422,15 @@ template {
 .notifications-banner p {
   z-index: 2;
   background-color: lightgrey;
+}
+
+@media screen and (min-width: 768px) {
+  .traffic-header {
+    display: flex;
+  }
+  .traffic-header ul {
+    margin-left: auto;
+  }
 }
 
 header {
@@ -561,10 +570,22 @@ a[href="#settings"]:last-child {
 ul {
   display: flex;
   flex-direction: row;
+  margin: 0 10px;
 }
 
 li {
   list-style: none;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+li:first-child {
+  background-color: #81c98f;
+  color: #fff;
+}
+
+h3 {
+  padding: 10px;
 }
 
 img[src^="images/"] {

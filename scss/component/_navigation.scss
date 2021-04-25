@@ -31,7 +31,17 @@ a[href="#settings"]:last-child {
 ul {
     display: flex;
     flex-direction: row;
+    margin: 0 10px;
 }
 li {
     list-style: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+li:first-child {
+    background-color: $green;
+    color: $white;
+}
+h3 {
+    padding: 10px;
 }

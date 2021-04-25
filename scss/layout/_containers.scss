@@ -54,15 +54,15 @@
 .notifications-banner {
     display: flex;
     flex-direction: row;
-    background-color: $color-primary;
     color: #000;
-    margin: 10px;
     font-size: 13px;
     text-align: center;
     z-index: 2;
     background-color: lightgrey;
     width: 125px;
     margin: 0;
+    position: absolute;
+    height: 150px;
 }
 #notifications {
     z-index: 2;
@@ -76,4 +76,14 @@
 .notifications-banner p {
     z-index: 2;
     background-color: lightgrey;
+}
+
+// Traffic Time-Frame Selection
+.traffic-header {
+    @media screen and (min-width: 768px) {
+        display: flex;
+        & ul {
+            margin-left: auto;
+        }
+    }    
 }
