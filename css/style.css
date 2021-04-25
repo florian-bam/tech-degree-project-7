@@ -404,13 +404,12 @@ template {
   background-color: lightgrey;
   width: 125px;
   margin: 0;
-  position: absolute;
-  height: 150px;
 }
 
 #notifications {
   z-index: 2;
   background-color: lightgrey;
+  position: absolute;
 }
 
 .notifications-banner-close {

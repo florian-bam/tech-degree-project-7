@@ -19,7 +19,20 @@ alertBanner.addEventListener('click', e => {
 // =======================
 // The Traffic Graph
 // =======================
-const trafficCanvas = document.querySelector('#traffic-chart');
+let trafficCanvas = document.querySelector('#traffic-chart');
+let numbers = [
+    750,
+    1250,
+    1000,
+    2000,
+    1500,
+    1750,
+    1250,
+    1850,
+    2250,
+    1500,
+    2500
+];
 let trafficData = {
     labels: [
         "16-22",
@@ -35,19 +48,7 @@ let trafficData = {
         "25-31"
     ],
     datasets: [{
-        data: [
-            750,
-            1250,
-            1000,
-            2000,
-            1500,
-            1750,
-            1250,
-            1850,
-            2250,
-            1500,
-            2500
-        ],
+        data: numbers,
         backgroundColor: 'rgba(116, 119, 191, .3)',
         borderWidth: 1
     }]
@@ -189,13 +190,13 @@ let notificationsBell = document.querySelector('#notifications');
 let bellContainer = document.querySelector('#bell-container');
 
 bellContainer.addEventListener('click', e => {
-    const element = e.target;
+    let element = e.target;
     notificationsBell.innerHTML = `
-    <div class="notifications-banner">
+    <div class="notifications-banner" id="message1">
         <p>Please set your timezone</p>
         <p class="notifications-banner-close">x</p>
     </div>
-    <div class="notifications-banner">
+    <div class="notifications-banner" id="message2">
         <p>Please turn on Email Notifications</p>
         <p class="notifications-banner-close">x</p>
     </div>
@@ -208,6 +209,254 @@ bellContainer.addEventListener('click', e => {
 // ======================================
 // The Traffic Graph Time-Frame Selection
 // ======================================
+
+let trafficNav = document.querySelector('ul');
+
+trafficNav.addEventListener('click', e => {
+    let element = e.target;
+    let li = document.querySelectorAll('li');
+    for (let i = 0; i < li.length; i++) {
+        li[i].style.backgroundColor = '#fff';
+        li[i].style.color = '#000'
+    }
+    if (element.innerHTML === "Hourly") {
+        element.style.backgroundColor = '#81c98f';
+        element.style.color = '#fff';
+        trafficChart.destroy();
+        numbers = [
+            750,
+            1250,
+            1000,
+            2000,
+            1500,
+            1750,
+            1250,
+            1850,
+            2250,
+            1500,
+            2500
+        ];
+        trafficData = {
+            labels: [
+                "16-22",
+                "23-29",
+                "30-5",
+                "6-12",
+                "13-19",
+                "20-26",
+                "27-3",
+                "4-10",
+                "11-17",
+                "18-24",
+                "25-31"
+            ],
+            datasets: [{
+                data: numbers,
+                backgroundColor: 'rgba(116, 119, 191, .3)',
+                borderWidth: 1
+            }]
+        };
+        trafficOptions = {
+            aspectRatio: 2.5,
+            animation: {
+                duration: 0
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        };
+        trafficChart = new Chart(trafficCanvas, {
+            type: 'line',
+            data: trafficData,
+            options: trafficOptions
+        });
+    }
+    if (element.innerHTML === "Daily") {
+        element.style.backgroundColor = '#81c98f';
+        element.style.color = '#fff';
+        trafficChart.destroy();
+        numbers = [
+            800,
+            900,
+            1000,
+            500,
+            400,
+            800,
+            1000,
+            850,
+            800,
+            850,
+            900
+        ];
+        trafficData = {
+            labels: [
+                "16-22",
+                "23-29",
+                "30-5",
+                "6-12",
+                "13-19",
+                "20-26",
+                "27-3",
+                "4-10",
+                "11-17",
+                "18-24",
+                "25-31"
+            ],
+            datasets: [{
+                data: numbers,
+                backgroundColor: 'rgba(116, 119, 191, .3)',
+                borderWidth: 1
+            }]
+        };
+        trafficOptions = {
+            aspectRatio: 2.5,
+            animation: {
+                duration: 0
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        };
+        trafficChart = new Chart(trafficCanvas, {
+            type: 'line',
+            data: trafficData,
+            options: trafficOptions
+        });
+    }
+    if (element.innerHTML === "Weekly") {
+        element.style.backgroundColor = '#81c98f';
+        element.style.color = '#fff';
+        trafficChart.destroy();
+        numbers = [
+            500,
+            600,
+            1200,
+            1250,
+            900,
+            700,
+            1000,
+            850,
+            600,
+            550,
+            500
+        ];
+        trafficData = {
+            labels: [
+                "16-22",
+                "23-29",
+                "30-5",
+                "6-12",
+                "13-19",
+                "20-26",
+                "27-3",
+                "4-10",
+                "11-17",
+                "18-24",
+                "25-31"
+            ],
+            datasets: [{
+                data: numbers,
+                backgroundColor: 'rgba(116, 119, 191, .3)',
+                borderWidth: 1
+            }]
+        };
+        trafficOptions = {
+            aspectRatio: 2.5,
+            animation: {
+                duration: 0
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        };
+        trafficChart = new Chart(trafficCanvas, {
+            type: 'line',
+            data: trafficData,
+            options: trafficOptions
+        });
+    }
+    if (element.innerHTML === "Monthly") {
+        element.style.backgroundColor = '#81c98f';
+        element.style.color = '#fff';
+        trafficChart.destroy();
+        numbers = [
+            750,
+            800,
+            900,
+            1050,
+            1400,
+            700,
+            500,
+            350,
+            400,
+            600,
+            500
+        ];
+        trafficData = {
+            labels: [
+                "16-22",
+                "23-29",
+                "30-5",
+                "6-12",
+                "13-19",
+                "20-26",
+                "27-3",
+                "4-10",
+                "11-17",
+                "18-24",
+                "25-31"
+            ],
+            datasets: [{
+                data: numbers,
+                backgroundColor: 'rgba(116, 119, 191, .3)',
+                borderWidth: 1
+            }]
+        };
+        trafficOptions = {
+            aspectRatio: 2.5,
+            animation: {
+                duration: 0
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        };
+        trafficChart = new Chart(trafficCanvas, {
+            type: 'line',
+            data: trafficData,
+            options: trafficOptions
+        });
+    }
+});
+
 // const trafficCanvas = document.querySelector('#traffic-chart');
 // let trafficData = {
 //     labels: [
