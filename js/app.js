@@ -503,4 +503,56 @@ autocomplete.oninput = function () {
 // ======================================
 // The Local Storage functionality
 // ======================================
+let settings = document.querySelector('#settings');
+
+// Get Value from toggle Bar
+// https://developer.tizen.org/community/code-snippet/web-code-snippet/how-save-checkbox-status-localstorage
+function save1() {	
+	let checkbox = document.getElementById("checkbox1");
+    localStorage.setItem("checkbox1", checkbox.checked);	
+}
+function save2() {	
+	let checkbox = document.getElementById("checkbox2");
+    localStorage.setItem("checkbox2", checkbox.checked);	
+}
+// Get Value from select menu
+// https://mkyong.com/javascript/javascript-get-selected-value-from-dropdown-list/
+let timezone = document.getElementById("timezone");
+let timezoneIndex = timezone.selectedIndex;
+
+function save3() {	
+    timezoneIndex = timezone.selectedIndex;
+	localStorage.setItem("timezone", timezoneIndex);
+    timezoneSelect = JSON.parse(localStorage.getItem("timezone"))
+}
+
+// If someone saves or cancels
+settings.addEventListener('click', e => {
+    let element = e.target;
+    if (element.id === "save") {
+        save1();
+        save2();
+        save3();
+    } else if (element.id === "cancel") {
+        localStorage.removeItem("checkbox1");
+        localStorage.removeItem("checkbox2");
+        localStorage.removeItem("timezone");
+    }
+});
+
+//for loading
+let checked1 = JSON.parse(localStorage.getItem("checkbox1"));
+let checked2 = JSON.parse(localStorage.getItem("checkbox2"));
+let timezoneSelect = JSON.parse(localStorage.getItem("timezone"));
+
+if (checked1) {
+    document.getElementById("checkbox1").checked = checked1;
+}
+if (checked2) {
+    document.getElementById("checkbox2").checked = checked2;
+}  
+if (timezoneSelect) {
+    timezone.selectedIndex = timezoneSelect;
+} 
+
 
