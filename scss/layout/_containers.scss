@@ -49,6 +49,9 @@
     border-radius: 5px;
     margin: 10px;
     font-size: 13px;
+    @media screen and (min-width: 768px) {
+        width: 90vw;
+    }
 
 }
 .alert-banner-close {
@@ -96,6 +99,7 @@
     @media screen and (min-width: 768px) {
         display: flex;
         & ul {
+            margin: 0;
             margin-left: auto;
         }
     }    
@@ -106,6 +110,7 @@ section {
     border-bottom: lightgrey .5px solid;
 }
 .daily h3,
+.mobile h3,
 .settings h3 {
     margin-bottom: 0;
     padding-bottom: 0;
@@ -117,6 +122,11 @@ section {
         max-width: 300px;
     }
 }
+#mobile-chart {
+    @media screen and (min-width: 768px) {
+        max-height: 150px;
+    }
+}
 
 // Social Stats
 .social-container {
@@ -126,6 +136,9 @@ section {
     border: gray .5px solid;
     border-radius: 10px;
     margin: 0 20px 20px 20px;
+    @media screen and (min-width: 768px) {
+        margin: 0 10px 10px 10px;
+    }
 }
 .social-image {
     background-color: $color-primary;
@@ -149,25 +162,63 @@ section {
 }
 .social-text p{
     margin: 0;
+    @media screen and (min-width: 768px) {
+        padding: 0 15px;
+    }
+}
+.social-div {
+    @media screen and (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 }
 
 // Members + Activity
-.members-container{
-    border-bottom: gray .5px solid;
-    margin-bottom: 20px;
-}
 .members-container,
 .activity-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-bottom: gray .5px solid;
+    margin-bottom: 20px;
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+        & p {
+            margin-left: auto;
+        }
+        & img {
+            margin: 20px;
+        }
+        margin-bottom: 0;
+    }
+}
+.activity-container {
+    & p:last-child {
+        display: none;
+    }
+    @media screen and (min-width: 768px) {
+        display: flex;
+        text-align: left;
+        flex-direction: row;
+        & p:last-child {
+            display: block;
+            margin-left: auto;
+            padding: 10px;
+        }
+    }
 }
 .activity-text {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-bottom: gray .5px solid;
-    margin-bottom: 20px;
+    @media screen and (min-width: 768px) {
+        & div {
+            & p {
+                text-align: left;
+            }
+        }
+    }
 }
 .activity-text p,
 .member-text p,
@@ -185,7 +236,10 @@ section {
 form {
     display: flex;
     flex-direction: column;
-    width: 98vw;
+    max-width: 300px;
+    @media screen and (min-width: 768px) {
+        max-width: 720px;
+    }
     & button {
         color: $white;
         background-color: $color-primary;
@@ -221,11 +275,17 @@ form {
     }
 }
 .settings select {
-    width: 90vw;
+    max-width: 280px;
+    @media screen and (min-width: 768px) {
+        max-width: 650px;
+    }
     height: 30px;
 }
 .settings-button button {
-    width: 40vw;
+    width: 100px;
+    @media screen and (min-width: 768px) {
+        width: 310px;
+    }
     height: 50px;
     border-radius: 5px;
     border-style: none;
@@ -248,7 +308,10 @@ form {
 }
 .settings {
     padding: 20px;
-    max-width: 100vw;
+    max-width: 320px;
+    @media screen and (min-width: 768px) {
+        max-width: 768px;
+    }
     & h3 {
         padding: 0;
     }
@@ -258,4 +321,7 @@ form {
     height: 50px;
     background-color: lightgrey;
     border-radius: 5px;
+    @media screen and (min-width: 768px) {
+        width: 700px;
+    }
 }

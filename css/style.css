@@ -396,6 +396,11 @@ template {
   margin: 10px;
   font-size: 13px;
 }
+@media screen and (min-width: 768px) {
+  .alert-banner {
+    width: 90vw;
+  }
+}
 
 .alert-banner-close {
   display: inline-block;
@@ -443,6 +448,7 @@ template {
     display: flex;
   }
   .traffic-header ul {
+    margin: 0;
     margin-left: auto;
   }
 }
@@ -452,6 +458,7 @@ section {
 }
 
 .daily h3,
+.mobile h3,
 .settings h3 {
   margin-bottom: 0;
   padding-bottom: 0;
@@ -465,6 +472,12 @@ section {
   max-width: 300px;
 }
 
+@media screen and (min-width: 768px) {
+  #mobile-chart {
+    max-height: 150px;
+  }
+}
+
 .social-container {
   display: flex;
   flex-direction: row;
@@ -472,6 +485,11 @@ section {
   border: gray 0.5px solid;
   border-radius: 10px;
   margin: 0 20px 20px 20px;
+}
+@media screen and (min-width: 768px) {
+  .social-container {
+    margin: 0 10px 10px 10px;
+  }
 }
 
 .social-image {
@@ -500,10 +518,18 @@ section {
 .social-text p {
   margin: 0;
 }
+@media screen and (min-width: 768px) {
+  .social-text p {
+    padding: 0 15px;
+  }
+}
 
-.members-container {
-  border-bottom: gray 0.5px solid;
-  margin-bottom: 20px;
+@media screen and (min-width: 768px) {
+  .social-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }
 
 .members-container,
@@ -511,14 +537,50 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-bottom: gray 0.5px solid;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .members-container,
+.activity-container {
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+  .members-container p,
+.activity-container p {
+    margin-left: auto;
+  }
+  .members-container img,
+.activity-container img {
+    margin: 20px;
+  }
+}
+
+.activity-container p:last-child {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .activity-container {
+    display: flex;
+    text-align: left;
+    flex-direction: row;
+  }
+  .activity-container p:last-child {
+    display: block;
+    margin-left: auto;
+    padding: 10px;
+  }
 }
 
 .activity-text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-bottom: gray 0.5px solid;
-  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .activity-text div p {
+    text-align: left;
+  }
 }
 
 .activity-text p,
@@ -537,7 +599,12 @@ section {
 form {
   display: flex;
   flex-direction: column;
-  width: 98vw;
+  max-width: 300px;
+}
+@media screen and (min-width: 768px) {
+  form {
+    max-width: 720px;
+  }
 }
 form button {
   color: #fff;
@@ -573,15 +640,25 @@ form textarea {
 }
 
 .settings select {
-  width: 90vw;
+  max-width: 280px;
   height: 30px;
+}
+@media screen and (min-width: 768px) {
+  .settings select {
+    max-width: 650px;
+  }
 }
 
 .settings-button button {
-  width: 40vw;
+  width: 100px;
   height: 50px;
   border-radius: 5px;
   border-style: none;
+}
+@media screen and (min-width: 768px) {
+  .settings-button button {
+    width: 310px;
+  }
 }
 .settings-button button:first-child {
   background-color: #7477bf;
@@ -604,7 +681,12 @@ form textarea {
 
 .settings {
   padding: 20px;
-  max-width: 100vw;
+  max-width: 320px;
+}
+@media screen and (min-width: 768px) {
+  .settings {
+    max-width: 768px;
+  }
 }
 .settings h3 {
   padding: 0;
@@ -615,6 +697,11 @@ form textarea {
   height: 50px;
   background-color: lightgrey;
   border-radius: 5px;
+}
+@media screen and (min-width: 768px) {
+  #timezone {
+    width: 700px;
+  }
 }
 
 header {
@@ -631,6 +718,7 @@ header {
 @media screen and (min-width: 768px) {
   header {
     padding: 10px 10px;
+    width: 100vw;
   }
 }
 
@@ -660,19 +748,6 @@ header h3 {
   font-size: small;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: auto;
-  grid-template-areas: "header" "nav" "main";
-}
-@media screen and (min-width: 768px) {
-  .grid-container {
-    grid-template-columns: 55px 1fr;
-    grid-template-areas: "header header" "nav main";
-  }
-}
-
 header {
   grid-area: header;
 }
@@ -692,26 +767,55 @@ main {
   }
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas: "header" "nav" "main";
+}
 @media screen and (min-width: 768px) {
-  .traffic,
-.social {
+  .grid-container {
+    grid-template-columns: 55px 1fr;
+    grid-template-areas: "header header" "nav main";
+    width: 100vw;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main,
+.traffic,
+.social,
+.members,
+.activity,
+.message,
+.settings {
     grid-column: 1/span 2;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .daily,
-.members,
-.message {
+  .daily {
     grid-column: 1/span 1;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .mobile,
-.activity,
+  .mobile {
+    grid-column: 2/span 1;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .activity,
 .settings {
     grid-column: 2/span 1;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .members,
+.message {
+    grid-column: 1/span 1;
   }
 }
 
