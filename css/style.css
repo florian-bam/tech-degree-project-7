@@ -714,4 +714,9 @@ img[src^="images/"] {
   border-radius: 50%;
 }
 
+.social-image svg {
+  display: block;
+  margin: 7px 0 0 7px;
+}
+
 /*# sourceMappingURL=style.css.map */
