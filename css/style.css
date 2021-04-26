@@ -362,12 +362,13 @@ template {
 .main-header {
   display: grid;
   grid-template-columns: 100px 1fr;
+  max-width: 100vw;
 }
 
 .main-header h2 {
   font-size: 1em;
   padding: 10px;
-  margin: auto 0;
+  margin: 0;
   width: 95%;
 }
 @media screen and (min-width: 768px) {
@@ -430,6 +431,13 @@ template {
   background-color: lightgrey;
 }
 
+.traffic-header ul {
+  margin: 0 auto;
+  padding: 10px;
+}
+.traffic-header h3 {
+  margin-bottom: 0;
+}
 @media screen and (min-width: 768px) {
   .traffic-header {
     display: flex;
@@ -440,8 +448,21 @@ template {
 }
 
 section {
-  padding-bottom: 30px;
   border-bottom: lightgrey 0.5px solid;
+}
+
+.daily h3,
+.settings h3 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.widget-container-half {
+  padding: 10px;
+  max-width: 100vw;
+}
+.widget-container-half canvas {
+  max-width: 300px;
 }
 
 .social-container {
@@ -504,29 +525,40 @@ section {
 .member-text p,
 .member-text a {
   text-align: center;
+  padding: 5px 10px;
+  margin: 0 0 5px;
+}
+
+.members,
+.activity {
+  border: none;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  width: 90vw;
+  width: 98vw;
 }
 form button {
   color: #fff;
   background-color: #7477bf;
-  margin: 15px;
+  margin: 10px;
   border-radius: 5px;
-  height: 30px;
+  height: 50px;
+  border-style: none;
 }
 form input {
-  margin: 15px;
+  margin: 10px;
   border-radius: 5px;
-  height: 30px;
+  height: 50px;
+  border: 1px solid grey;
+  background-color: lightgrey;
 }
 form textarea {
-  margin: 15px;
+  margin: 10px;
   border-radius: 5px;
-  height: 100px;
+  height: 150px;
+  background-color: lightgrey;
 }
 
 .settings-container {
@@ -534,25 +566,55 @@ form textarea {
 }
 .settings-container label {
   width: 80px;
-  margin-left: auto;
+  margin: auto 0 auto auto;
+}
+.settings-container:last-child {
+  margin-bottom: 20px;
 }
 
 .settings select {
-  width: 95vw;
+  width: 90vw;
   height: 30px;
 }
 
 .settings-button button {
-  width: 45vw;
-  height: 30px;
+  width: 40vw;
+  height: 50px;
+  border-radius: 5px;
+  border-style: none;
 }
 .settings-button button:first-child {
   background-color: #7477bf;
   color: #fff;
+  margin-right: 27px;
 }
 .settings-button button:last-child {
   background-color: grey;
   color: #fff;
+}
+
+.switch-ios.switch-light input:checked ~ span {
+  border-color: #7477bf;
+  box-shadow: inset 0 0 0 30px #7477bf;
+}
+
+.switch-ios.switch-light input:checked ~ span a {
+  border-color: lightgrey;
+}
+
+.settings {
+  padding: 20px;
+  max-width: 100vw;
+}
+.settings h3 {
+  padding: 0;
+}
+
+#timezone {
+  margin: 30px 0 15px 0;
+  height: 50px;
+  background-color: lightgrey;
+  border-radius: 5px;
 }
 
 header {
@@ -562,7 +624,7 @@ header {
   background-color: #7477bf;
   color: #fff;
   fill: #fff;
-  padding: 10px 5px;
+  padding: 0 5px;
   margin: auto 0;
   align-items: center;
 }
