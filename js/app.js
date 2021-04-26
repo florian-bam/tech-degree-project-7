@@ -217,7 +217,7 @@ trafficNav.addEventListener('click', e => {
     let li = document.querySelectorAll('li');
     for (let i = 0; i < li.length; i++) {
         li[i].style.backgroundColor = '#fff';
-        li[i].style.color = '#000'
+        li[i].style.color = '#000';
     }
     if (element.innerHTML === "Hourly") {
         element.style.backgroundColor = '#81c98f';
@@ -523,7 +523,7 @@ let timezoneIndex = timezone.selectedIndex;
 function save3() {	
     timezoneIndex = timezone.selectedIndex;
 	localStorage.setItem("timezone", timezoneIndex);
-    timezoneSelect = JSON.parse(localStorage.getItem("timezone"))
+    timezoneSelect = JSON.parse(localStorage.getItem("timezone"));
 }
 
 // If someone saves or cancels
